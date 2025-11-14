@@ -11,6 +11,8 @@ import SharedWithMe from './pages/SharedWithMe/SharedWithMe'
 import AllReviews from './pages/AllReviews/AllReviews'
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import AddReview from './pages/AddReview/AddReview';
+import ChangePassword from './pages/ChangePassword/ChangePassword'
+import EditProfile from './pages/EditProfile/EditProfile'
 
 function App() {
   return (<div>
@@ -30,34 +32,42 @@ function App() {
         />
 
         <Route
-              path='home'
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            >
-              <Route
-                path='allMovies'
-                element={<AllMovies />}
-              />
-              <Route
-                path='myReviews'
-                element={<MyReviews />}
-              />
-              <Route
-                path='sharedWithMe'
-                element={<SharedWithMe />}
-              />
-              <Route
-                path='allReviews'
-                element={<AllReviews />}
-              />
-              <Route
-                path='add-review/:id'
-                element={<AddReview />}
-              />
-            </Route>
+          path='home'
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        >
+          <Route
+            path='allMovies'
+            element={<AllMovies />}
+          />
+          <Route
+            path='myReviews'
+            element={<MyReviews />}
+          />
+          <Route
+            path='sharedWithMe'
+            element={<SharedWithMe />}
+          />
+          <Route
+            path='allReviews'
+            element={<AllReviews />}
+          />
+          <Route
+            path='add-review/:id'
+            element={<AddReview />}
+          />
+          <Route
+            path='change-password'
+            element={<ChangePassword />}
+          />
+          <Route
+            path='edit-profile'
+            element={<EditProfile />}
+          />
+        </Route>
       </Routes>
     </AuthProvider>
     <ToastContainer />

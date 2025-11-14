@@ -82,6 +82,27 @@ function Navbar() {
             </li>
 
             <li className='nav-item'>
+              <Link
+                className='nav-link float-end'
+
+                aria-current='page'
+                to='/home/edit-profile'
+              >
+                Edit Profile
+              </Link>
+            </li>
+
+            <li className='nav-item float-end'>
+              <Link
+                className='nav-link'
+                aria-current='page'
+                to='/home/change-password'
+              >
+                Change Password
+              </Link>
+            </li>
+
+            <li className='nav-item float-end'>
               <button
                 onClick={onLogout}
                 className='nav-link display-end'
