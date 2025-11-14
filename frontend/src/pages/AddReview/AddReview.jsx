@@ -19,7 +19,7 @@ function AddReview() {
     const response = await addReview(id, review, rating);
     if (response.status === 'success') {
       toast.success('Review added successfully');
-      navigate('/home/my-reviews');
+      navigate('/home/allMovies');
     } else {
       toast.error('Failed to add review');
     }

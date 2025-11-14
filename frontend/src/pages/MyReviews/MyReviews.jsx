@@ -13,7 +13,10 @@ function MyReviews() {
   };
 
   useEffect(() => {
-    loadMyReviews();
+    const fetchReviews = async () => {
+      await loadMyReviews();
+    };
+    fetchReviews();
   }, []);
 
   return (
@@ -27,12 +30,12 @@ function MyReviews() {
             <div key={review.id} className="col-md-12 mb-4">
               <div className="card">
                 <div className="card-body">
-                  <h5 className="card-title">{review.movie.title}</h5>
-                  <p className="card-text">Rating: {review.rating} / 5</p>
+                  <h5 className="card-title">{review.movieTitle}</h5>
+                  <p className="card-text">Rating: {review.rating} / 10</p>
                   <p className="card-text">{review.review}</p>
                   <p className="card-text">
                     <small className="text-muted">
-                      Reviewed on: {new Date(review.timestamp).toLocaleDateString()}
+                      Reviewed on: {new Date(review.lastUpdated).toLocaleDateString()}
                     </small>
                   </p>
                 </div>
