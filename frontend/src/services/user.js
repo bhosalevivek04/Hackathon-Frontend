@@ -61,6 +61,22 @@ export async function login(email, password) {
     }
 }
 
+export async function update(firstName, lastName, email, mobile, dob) {
+    try {
+        const token = localStorage.getItem('token');
+        const url = `${config.url}/user/profile`
+        const body = { firstName, lastName, email, mobile, dob };
+        const response = await axios.put(url, body, {
+            headers: {
+                token: token,
+            },
+        });
+        return response.data;
+    } catch (ex) {
+        console.log(`Error: `, ex)
+    }
+}
+
 // export async function login(email, password) {
 //   try {
 //     // create url
