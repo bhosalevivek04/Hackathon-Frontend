@@ -129,6 +129,24 @@ export async function changePassword(password, newPassword) {
     }
 }
 
+export async function update(firstName, lastName, email, mobile, dob) {
+    try {
+        const token = localStorage.getItem('token');
+        const userId = getUserIdFromToken();
+        const url = `${config.url}/user/profile`
+        const body = { firstName, lastName, email, mobile, dob };
+        const response = await axios.put(url, body, {
+            headers: {
+                token: token,
+                userId: userId,
+            },
+        });
+        return response.data;
+    } catch (ex) {
+        console.log(`Error: `, ex)
+    }
+}
+
 // export async function login(email, password) {
 //   try {
 //     // create url
