@@ -1,0 +1,13 @@
+.register-container {
+    width: 500px;
+    margin: auto;
+}
+
+.side-by-side {
+    display: flex;
+    gap: 1rem;
+}
+
+.name-on-side {
+    float: inline-start;
+}
