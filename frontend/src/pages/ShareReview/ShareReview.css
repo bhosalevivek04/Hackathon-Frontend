@@ -1,0 +1,49 @@
+.share-review-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.share-review-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.users-list {
+  margin-bottom: 20px;
+}
+
+.user-item {
+  margin-bottom: 10px;
+}
+
+.user-item label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}

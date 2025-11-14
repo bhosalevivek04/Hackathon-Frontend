@@ -13,6 +13,8 @@ import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import AddReview from './pages/AddReview/AddReview';
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import EditProfile from './pages/EditProfile/EditProfile'
+import EditReview from './pages/EditReview/EditReview';
+import ShareReview from './pages/ShareReview/ShareReview';
 
 function App() {
   return (<div>
@@ -66,6 +68,14 @@ function App() {
           <Route
             path='edit-profile'
             element={<EditProfile />}
+          />
+          <Route
+            path='edit-review/:id'
+            element={<EditReview />}
+          />
+          <Route
+            path='share-review/:id'
+            element={<ShareReview />}
           />
         </Route>
       </Routes>

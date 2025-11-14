@@ -148,3 +148,21 @@ export const deleteReview = async (reviewId) => {
     return { status: 'error', error: 'Failed to delete review' };
   }
 };
+
+export const getReviewById = async (reviewId) => {
+  try {
+    const token = localStorage.getItem('token');
+    const userId = getUserIdFromToken();
+    const url = `${config.url}/reviews/${reviewId}`;
+    const response = await axios.get(url, {
+      headers: {
+        token: token,
+        userId: userId,
+      },
+    });
+    return response.data;
+  } catch (ex) {
+    console.error(ex);
+    return { status: 'error', error: 'Failed to get review' };
+  }
+};
