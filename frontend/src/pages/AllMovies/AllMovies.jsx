@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { getMovies } from '../../services/movies'
+import { Link } from 'react-router-dom'
 
 function AllMovies() {
   const [movies, setMovies] = useState([])
@@ -30,9 +31,9 @@ function AllMovies() {
                   <h5 className='card-title'>{movie.title}</h5>
                   <p className='card-text'>Release Date: {new Date(movie.release).toLocaleDateString()}</p>
                   {/* <p className='card-text'>Release Date: {movie.release}</p> */}
-                  <button className="btn btn-primary" >
+                  <Link to={`/home/add-review/${movie.id}`} className="btn btn-primary">
                     Review this Movie
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

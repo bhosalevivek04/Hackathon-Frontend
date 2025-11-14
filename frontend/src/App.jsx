@@ -10,6 +10,7 @@ import MyReviews from './pages/MyReviews/MyReviews'
 import SharedWithMe from './pages/SharedWithMe/SharedWithMe'
 import AllReviews from './pages/AllReviews/AllReviews'
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
+import AddReview from './pages/AddReview/AddReview';
 
 function App() {
   return (<div>
@@ -51,6 +52,10 @@ function App() {
               <Route
                 path='allReviews'
                 element={<AllReviews />}
+              />
+              <Route
+                path='add-review/:id'
+                element={<AddReview />}
               />
             </Route>
       </Routes>
