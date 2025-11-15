@@ -1,0 +1,62 @@
+/* SharedWithMe page styling - consistent with AllReviews */
+.shared-with-me-container {
+	min-height: 80vh;
+	padding: 48px 20px;
+	background: linear-gradient(180deg, var(--bg-2), var(--bg));
+	color: var(--text);
+}
+
+.shared-with-me-container h2 {
+	text-align: center;
+	font-size: 34px;
+	margin-bottom: 26px;
+	color: #fff;
+	text-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}
+
+.shared-with-me-container .row {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 18px;
+}
+
+.shared-with-me-container .card {
+	background: var(--overlay-bg);
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.shared-with-me-container .card-body {
+	padding: 20px 22px;
+}
+
+.shared-with-me-container .card-title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 8px;
+}
+
+.shared-with-me-container .card-text {
+	color: #d1d7de;
+	line-height: 1.5;
+}
+
+.shared-with-me-container .text-muted {
+	color: #9aa3ad !important;
+}
+
+@media (min-width: 900px) {
+	.shared-with-me-container .row {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1300px) {
+	.shared-with-me-container .row {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

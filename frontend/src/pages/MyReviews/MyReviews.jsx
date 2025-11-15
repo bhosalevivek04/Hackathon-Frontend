@@ -48,33 +48,31 @@ function MyReviews() {
       {reviews.length === 0 ? (
         <p className="no-reviews">You have not written any reviews yet.</p>
       ) : (
-        <div className="row">
+        <div className="reviews-grid">
           {reviews.map((review) => (
-            <div key={review.id} className="col-md-12 mb-4">
-              <div className="review-card">
-                <div className="card-body">
-                  <h5 className="card-title">{review.movieTitle}</h5>
-                  <p className="rating">Rating: {review.rating} / 10</p>
-                  <p className="review-text">{review.review}</p>
-                  <p className="review-date">
-                    <small>
-                      Reviewed on: {new Date(review.lastUpdated).toLocaleDateString()}
-                    </small>
-                  </p>
-                  <div className="btn-group">
-                    <button onClick={() => handleEdit(review.id)} className="btn btn-secondary">
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(review.id)} className="btn btn-danger">
-                      Delete
-                    </button>
-                    <button onClick={() => handleShare(review.id)} className="btn btn-info">
-                      Share
-                    </button>
-                  </div>
+            <article key={review.id} className="review-card">
+              <div className="card-body">
+                <h5 className="card-title">{review.movieTitle}</h5>
+                <p className="rating">Rating: {review.rating} / 10</p>
+                <p className="review-text">{review.review}</p>
+                <p className="review-date">
+                  <small>
+                    Reviewed on: {new Date(review.lastUpdated).toLocaleDateString()}
+                  </small>
+                </p>
+                <div className="btn-group">
+                  <button onClick={() => handleEdit(review.id)} className="btn btn-secondary">
+                    Edit
+                  </button>
+                  <button onClick={() => handleDelete(review.id)} className="btn btn-danger">
+                    Delete
+                  </button>
+                  <button onClick={() => handleShare(review.id)} className="btn btn-info">
+                    Share
+                  </button>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       )}

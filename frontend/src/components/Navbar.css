@@ -1,0 +1,49 @@
+/* Themed navbar matching cinematic palette */
+nav.navbar {
+  background: rgba(11, 15, 26, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding: 0.5rem 1rem;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: 1.05rem;
+}
+
+.navbar .nav-link,
+.navbar .nav-link:visited,
+.navbar .nav-link:focus {
+  color: var(--text);
+  margin-right: 0.6rem;
+  transition: color 0.18s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--accent);
+}
+
+.navbar .nav-item.float-end {
+  margin-left: 0.6rem;
+}
+
+.navbar button.nav-link {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+@media (max-width: 768px) {
+  .navbar { padding: 0.4rem 0.6rem; }
+  .navbar-brand { font-size: 1rem; }
+}

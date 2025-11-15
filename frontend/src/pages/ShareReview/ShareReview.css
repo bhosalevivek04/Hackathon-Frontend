@@ -1,49 +1,156 @@
 .share-review-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  padding: 60px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.6s ease-out;
 }
 
-.share-review-container h2 {
+.share-review-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.share-review-form {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 40px;
+  max-width: 780px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
+  animation: slideInFromTop 0.6s ease-out;
+  text-align: left;
+}
+
+.share-review-form h2 {
+  font-size: 32px;
+  color: var(--text);
+  margin-bottom: 22px;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .users-list {
-  margin-bottom: 20px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 18px;
+  max-height: 360px;
+  overflow-y: auto;
 }
 
 .user-item {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .user-item label {
-  display: flex;
-  align-items: center;
+  color: var(--text);
   cursor: pointer;
 }
 
 .user-item input[type="checkbox"] {
-  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
 }
 
 .btn {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 14px;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 10px;
   font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 12px;
 }
 
 .btn-primary {
-  background-color: #007bff;
-  color: white;
+  background: var(--button-gradient);
+  color: black;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.32);
 }
 
-.mt-2 {
-  margin-top: 10px;
+.loading-spinner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--bg-2), var(--bg));
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 600;
 }
+
+@media (max-width: 768px) {
+  .share-review-form {
+    padding: 24px;
+  }
+
+  .share-review-form h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .share-review-container {
+    padding: 30px 12px;
+  }
+
+  .users-list {
+    max-height: 300px;
+  }
+}
+
+.mt-2 { margin-top: 10px; }

@@ -47,29 +47,33 @@ function ShareReview() {
         }
     };
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div className="loading-spinner">Loading users...</div>;
 
     return (
         <div className="share-review-container">
-            <h2>Share Review</h2>
-            <p>Select users to share this review with:</p>
-            <div className="users-list">
-                {users.map((user) => (
-                    <div key={user.id} className="user-item">
-                        <label>
-                            <input
-                                type="checkbox"
-                                checked={selectedUsers.includes(user.id)}
-                                onChange={() => handleUserSelect(user.id)}
-                            />
-                            {user.firstName} {user.lastName} ({user.email})
-                        </label>
-                    </div>
-                ))}
+            <div className="share-review-form">
+                <h2>Share Review</h2>
+                <p style={{ textAlign: 'center', marginBottom: '20px', color: '#666', fontSize: '15px' }}>
+                    Select users to share this review with:
+                </p>
+                <div className="users-list">
+                    {users.map((user) => (
+                        <div key={user.id} className="user-item">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    checked={selectedUsers.includes(user.id)}
+                                    onChange={() => handleUserSelect(user.id)}
+                                />
+                                {user.firstName} {user.lastName} ({user.email})
+                            </label>
+                        </div>
+                    ))}
+                </div>
+                <button onClick={handleShare} className="btn btn-primary mt-2">
+                    Share Review
+                </button>
             </div>
-            <button onClick={handleShare} className="btn btn-primary mt-2">
-                Share Review
-            </button>
         </div>
     );
 }

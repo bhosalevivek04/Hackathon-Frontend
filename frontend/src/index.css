@@ -1,0 +1,23 @@
+:root {
+	/* Cinematic palette (softened) */
+	/* --bg originally very deep navy; softened for less-contrast pages */
+	--bg: #071031; /* softer navy (page background) */
+	--bg-2: #0b2746; /* gentle deep blue for subtle gradients */
+	--surface: #0b2746;
+	--overlay-bg: rgba(8,10,14,0.48); /* slightly lighter overlay */
+	--card-bg: rgba(255,255,255,0.04); /* a touch brighter card surface */
+	--text: #e6edf3; /* off-white */
+	--muted: #aab7c2; /* slightly lighter muted gray */
+	--accent: #3b82f6; /* primary blue accent */
+	--accent-2: #1e40af; /* deeper blue */
+	--button-gradient: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+}
+
+html, body, #root {
+	height: 100%;
+	background: var(--bg);
+	color: var(--text);
+	font-family: Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+a { color: var(--accent); }

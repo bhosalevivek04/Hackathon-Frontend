@@ -27,40 +27,43 @@ function AddReview() {
 
   return (
     <div className="add-review-container">
-      <h2>Add Review</h2>
-      <div className="form-group">
-        <label htmlFor="rating">Rating</label>
-        <select
-          id="rating"
-          className="form-control"
-          value={rating}
-          onChange={(e) => setRating(Number(e.target.value))}
-        >
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-          <option value={6}>6</option>
-          <option value={7}>7</option>
-          <option value={8}>8</option>
-          <option value={9}>9</option>
-          <option value={10}>10</option>
-        </select>
+      <div className="add-review-form">
+        <h2>Add Review</h2>
+        <div className="form-group">
+          <label htmlFor="rating">Rating</label>
+          <select
+            id="rating"
+            className="form-control"
+            value={rating}
+            onChange={(e) => setRating(Number(e.target.value))}
+          >
+            <option value={1}>1 - Poor</option>
+            <option value={2}>2 - Fair</option>
+            <option value={3}>3 - Good</option>
+            <option value={4}>4 - Very Good</option>
+            <option value={5}>5 - Excellent</option>
+            <option value={6}>6 - Great</option>
+            <option value={7}>7 - Outstanding</option>
+            <option value={8}>8 - Masterpiece</option>
+            <option value={9}>9 - Incredible</option>
+            <option value={10}>10 - Perfect</option>
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="review">Your Review</label>
+          <textarea
+            id="review"
+            className="form-control"
+            rows="5"
+            placeholder="Share your thoughts about this movie..."
+            value={review}
+            onChange={(e) => setReview(e.target.value)}
+          ></textarea>
+        </div>
+        <button onClick={handleAddReview} className="btn btn-primary mt-2">
+          Submit Review
+        </button>
       </div>
-      <div className="form-group">
-        <label htmlFor="review">Your Review</label>
-        <textarea
-          id="review"
-          className="form-control"
-          rows="5"
-          value={review}
-          onChange={(e) => setReview(e.target.value)}
-        ></textarea>
-      </div>
-      <button onClick={handleAddReview} className="btn btn-primary mt-2">
-        Submit Review
-      </button>
     </div>
   );
 }

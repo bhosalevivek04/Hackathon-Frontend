@@ -1,4 +1,5 @@
 import React from 'react'
+import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../provider/AuthProvider'
 
@@ -18,10 +19,7 @@ function Navbar() {
   }
 
   return (
-    <nav
-      className='navbar navbar-expand-lg bg-primary'
-      data-bs-theme='dark'
-    >
+    <nav className='navbar navbar-expand-lg'>
       <div className='container-fluid'>
         <Link
           className='navbar-brand'

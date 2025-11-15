@@ -1,0 +1,63 @@
+/* AllReviews page styling - cinematic list view */
+.all-reviews-container {
+	min-height: 80vh;
+	padding: 48px 20px;
+	background: linear-gradient(180deg, var(--bg-2), var(--bg));
+	color: var(--text);
+}
+
+.all-reviews-container h2 {
+	text-align: center;
+	font-size: 34px;
+	margin-bottom: 26px;
+	color: #fff;
+	text-shadow: 0 6px 18px rgba(0,0,0,0.7);
+}
+
+.all-reviews-container .row {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 18px;
+}
+
+.all-reviews-container .card {
+	background: var(--overlay-bg);
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+	overflow: hidden;
+}
+
+.all-reviews-container .card-body {
+	padding: 20px 22px;
+}
+
+.all-reviews-container .card-title {
+	font-size: 20px;
+	font-weight: 700;
+	color: #fff;
+	margin-bottom: 8px;
+}
+
+.all-reviews-container .card-text {
+	color: #d1d7de;
+	line-height: 1.5;
+}
+
+.all-reviews-container .text-muted {
+	color: #9aa3ad !important;
+}
+
+@media (min-width: 900px) {
+	.all-reviews-container .row {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1300px) {
+	.all-reviews-container .row {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

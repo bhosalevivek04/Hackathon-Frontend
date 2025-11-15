@@ -1,6 +1,10 @@
 .register-container {
     width: 500px;
     margin: auto;
+    background: var(--card-bg);
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.35);
 }
 
 .side-by-side {
@@ -10,4 +14,37 @@
 
 .name-on-side {
     float: inline-start;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 28px;
+    color: var(--text);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    font-size: 15px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.02);
+    color: var(--text);
+}
+
+.button {
+    background: var(--button-gradient);
+    color: black;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+    .register-container { width: auto; margin: 20px 12px; }
+    .side-by-side { flex-direction: column; }
 }
