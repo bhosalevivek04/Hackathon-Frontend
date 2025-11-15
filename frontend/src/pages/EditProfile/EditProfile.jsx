@@ -16,13 +16,14 @@ function EditProfile() {
       const response = await getProfile();
       if (response.status === 'success') {
         const user = response.data;
-        setFirstName(user.firstName);
-        setLastName(user.lastName);
-        setEmail(user.email);
-        setMobile(user.mobile);
-        setDob(user.dob);
+        setFirstName(user.firstName || '');
+        setLastName(user.lastName || '');
+        setEmail(user.email || '');
+        setMobile(user.mobile || '');
+        setDob(user.dob ? user.dob.split('T')[0] : '');
       } else {
         toast.error('Failed to load profile');
+        console.error('Profile load error:', response.error);
       }
       setLoading(false);
     };

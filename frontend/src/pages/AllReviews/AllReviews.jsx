@@ -9,6 +9,8 @@ function AllReviews() {
     const response = await allReviews();
     if (response.status === 'success') {
       setReviews(response.data);
+    } else {
+      console.error('Failed to load reviews:', response.error);
     }
   };
 

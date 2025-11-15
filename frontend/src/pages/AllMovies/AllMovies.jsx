@@ -4,19 +4,15 @@ import { Link } from 'react-router-dom'
 
 function AllMovies() {
   const [movies, setMovies] = useState([])
-  const [layout, setLayout] = useState('grid')
-
-  const getMoviesList = async () => {
-    const response = await getMovies()
-    console.log(response['data']);
-    if (response['status'] == 'success') {
-      setMovies(response['data'])
-    }
-  }
 
   useEffect(() => {
-    // load the Movies automatically when this component is launched
-    getMoviesList()
+    const fetchMovies = async () => {
+      const response = await getMovies()
+      if (response.status === 'success') {
+        setMovies(response.data)
+      }
+    }
+    fetchMovies()
   }, [])
 
   return (
@@ -30,7 +26,6 @@ function AllMovies() {
                 <div className='card-body'>
                   <h5 className='card-title'>{movie.title}</h5>
                   <p className='card-text'>Release Date: {new Date(movie.release).toLocaleDateString()}</p>
-                  {/* <p className='card-text'>Release Date: {movie.release}</p> */}
                   <Link to={`/home/add-review/${movie.id}`} className="btn btn-primary">
                     Review this Movie
                   </Link>
@@ -39,8 +34,6 @@ function AllMovies() {
             </div>
           ))}
         </div>
-
-
       </div>
     </div>
   )

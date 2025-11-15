@@ -29,7 +29,8 @@ export async function getMovies() {
         })
         return response.data;
     } catch (error) {
-        console.log(`Error: `, error)
+        console.error(`Error fetching movies:`, error)
+        throw error;
     }
 }
 
@@ -38,19 +39,15 @@ export async function allReviews() {
         const token = localStorage.getItem('token');
         const userId = getUserIdFromToken();
         const url = `${config.url}/reviews`
-        const response = await axios.get(url,
-            {
-                headers: {
-                    token: token,
-                    userId: userId,
-                },
-            }
-        )
+        const response = await axios.get(url, {
+            headers: {
+                token: token,
+                userId: userId,
+            },
+        })
         return response.data;
     } catch (error) {
-        console.log(
-            `Error: `,
-            error
-        )
+        console.error(`Error fetching all reviews:`, error)
+        throw error;
     }
 }

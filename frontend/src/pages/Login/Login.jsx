@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { login } from '../../services/user';
 import { useAuth } from '../../provider/AuthProvider';
@@ -9,36 +9,36 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const { setUser } = useAuth();
-
   const navigate = useNavigate();
 
   const onLogin = async () => {
-    if (email.length == 0) {
+    if (email.length === 0) {
       toast.warning("Please enter Email!!")
-    } else if (password.length == 0) {
-      toast.warning("Please enter Password!!")
+      return;
     }
-    else {
+    if (password.length === 0) {
+      toast.warning("Please enter Password!!")
+      return;
+    }
+
+    try {
       const response = await login(email, password)
-      if (response['status'] == 'success') {
-        toast.success('login successful')
+      if (response.status === 'success') {
+        toast.success('Login successful')
 
-        // get the token from response and cache it in local storage
-        localStorage.setItem('token', response['data']['token'])
-        // localStorage.setItem('firstName', response['data']['firstName'])
-        // localStorage.setItem('lastName', response['data']['lastName'])
+        localStorage.setItem('token', response.data.token)
 
-        // set the logged in user information
         setUser({
-          firstName: response['data']['firstName'],
-          lastName: response['data']['lastName'],
+          firstName: response.data.firstName,
+          lastName: response.data.lastName,
         })
 
-        // navigate to the PropertyListing page
         navigate('/home/allMovies')
       } else {
-        toast.error(response['error'])
+        toast.error(response.error)
       }
+    } catch {
+      toast.error('Login failed. Please try again.')
     }
   }
 
@@ -67,16 +67,15 @@ const Login = () => {
             className='form-control'
           />
         </div>
-        <div className='mb-3'>
+        {/* <div className='mb-3'>
           <input
             type='checkbox'
             className='me-2'
           />
           <label htmlFor=''>Remember me</label>
-        </div>
+        </div> */}
         <div className='mb-3'>
-          {/* <button className='btn btn-link'>Forgot password?</button> */}
-          {/* Don't have an account yet? <Link to='/signup'>Register here</Link> */}
+          Don't have an account yet? <Link to='/signup'>Register here</Link>
         </div>
         <div className='mb-3'>
           <button

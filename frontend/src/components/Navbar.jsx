@@ -1,25 +1,19 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import { useAuth } from '../provider/AuthProvider'
 
 function Navbar() {
-  // get the reference of navigate function
   const navigate = useNavigate()
 
-  // get setUser from AuthContext
   const { setUser } = useAuth()
 
   const onLogout = () => {
-    // remove all the cached items
     localStorage.removeItem('token')
     localStorage.removeItem('firstName')
     localStorage.removeItem('lastName')
 
-    // set the user to null
     setUser(null)
 
-    // redirect to Login page
     navigate('/login')
   }
 
