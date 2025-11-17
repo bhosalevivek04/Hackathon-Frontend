@@ -49,23 +49,29 @@ const Login = () => {
 
       <div className='login-container'>
         <div className='mb-3'>
-          <label htmlFor=''>Email</label>
+          <label htmlFor='email'>Email</label>
           <input
             onChange={(e) => {
               setEmail(e.target.value)
             }}
             type='email'
             className='form-control'
+            id='email'
+            name='email'
+            autoComplete='email'
           />
         </div>
         <div className='mb-3'>
-          <label htmlFor=''>Password</label>
+          <label htmlFor='password'>Password</label>
           <input
             onChange={(e) => {
               setPassword(e.target.value)
             }}
             type='password'
             className='form-control'
+            id='password'
+            name='password'
+            autoComplete='current-password'
           />
         </div>
         {/* <div className='mb-3'>

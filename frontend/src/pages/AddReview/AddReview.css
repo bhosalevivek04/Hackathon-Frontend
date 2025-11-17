@@ -89,15 +89,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: all 0.3s ease;
   background: rgba(255,255,255,0.02);
-  color: var(--text);
+  color: white;
 }
 
-.form-control:focus {
-  outline: none;
-  border-color: var(--accent);
-  background: rgba(255,255,255,0.03);
-  box-shadow: 0 0 0 4px rgba(245,165,36,0.06);
-}
+
 
 .form-control::placeholder {
   color: #999;
@@ -105,6 +100,11 @@
 
 select.form-control {
   cursor: pointer;
+}
+
+select.form-control option {
+  color: black;
+  background: white;
 }
 
 textarea.form-control {
